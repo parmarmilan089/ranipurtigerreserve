@@ -12,13 +12,43 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    {{--  <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-nav-link>
+                    </x-nav-link>  --}}
 
                     <!-- New Banner Menu -->
                     <x-nav-link :href="route('banner.index')" :active="request()->routeIs('banner.*')">
                         {{ __('Banner') }}
+                    </x-nav-link>
+
+                    <!-- New info sections Menu -->
+                    <x-nav-link :href="route('info-section.index')" :active="request()->routeIs('info-section.*')">
+                        {{ __('Info-section') }}
+                    </x-nav-link>
+
+                    <!-- about sections Menu -->
+                    <x-nav-link :href="route('about.form')" :active="request()->routeIs('about.form.*')">
+                        {{ __('About-section') }}
+                    </x-nav-link>
+
+                    <!-- attraction sections Menu -->
+                    <x-nav-link :href="route('attraction-section.index')" :active="request()->routeIs('attraction-section.*')">
+                        {{ __('Attraction-section') }}
+                    </x-nav-link>
+
+                    <!-- Event sections Menu -->
+                    <x-nav-link :href="route('event-section.index')" :active="request()->routeIs('event-section.*')">
+                        {{ __('Event-section') }}
+                    </x-nav-link>
+
+                    <!-- Photos Menu -->
+                    <x-nav-link :href="route('photo-gallery.index')" :active="request()->routeIs('photo-gallery.*')">
+                        {{ __('Photo-gallery') }}
+                    </x-nav-link>
+
+                    <!-- Photos Menu -->
+                    <x-nav-link :href="route('geographical-section.index')" :active="request()->routeIs('geographical-section.*')">
+                        {{ __('Geographical-section') }}
                     </x-nav-link>
                 </div>
             </div>

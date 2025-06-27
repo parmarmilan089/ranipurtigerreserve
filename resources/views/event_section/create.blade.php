@@ -1,0 +1,56 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Add Event Section</h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white p-6 shadow sm:rounded-lg">
+            <form method="POST" action="{{ route('event-section.store') }}" enctype="multipart/form-data" class="space-y-6">
+                @csrf
+
+                <div>
+                    <x-input-label for="title" :value="__('Title')" />
+                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="old('title')" required />
+                </div>
+
+                <div>
+                    <x-input-label for="description" :value="__('Description')" />
+                    <textarea name="description" class="w-full border-gray-300 rounded">{{ old('description') }}</textarea>
+                </div>
+
+                <div>
+                    <x-input-label :value="__('Bullet Points')" />
+                    <div id="bullet-container">
+                        <input type="text" name="bullet_points[]" class="bullet-point w-full mt-1 mb-2" />
+                    </div>
+                    <button type="button" onclick="addBullet()" class="text-blue-600">+ Add Bullet Point</button>
+                    <input type="hidden" name="bullet_points" id="bullet_points_combined" />
+                </div>
+
+                <div>
+                    <x-input-label for="image" :value="__('Image')" />
+                    <input type="file" name="image" id="image" class="block w-full">
+                </div>
+
+                <x-primary-button onclick="combineBullets()">Save Event Section</x-primary-button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function addBullet() {
+            const container = document.getElementById('bullet-container');
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.name = 'bullet_points[]';
+            input.className = 'bullet-point w-full mt-1 mb-2';
+            container.appendChild(input);
+        }
+
+        function combineBullets() {
+            const inputs = document.querySelectorAll('.bullet-point');
+            const values = [...inputs].map(i => i.value).filter(Boolean);
+            document.getElementById('bullet_points_combined').value = values.join(',');
+        }
+    </script>
+</x-app-layout>

@@ -69,7 +69,7 @@ class BannerController extends Controller
                 ->store('banners', 'public');
 
             // Extract filename (without path) or keep full path as you prefer
-            $data['banner_image'] = 'banners/'.basename($path);
+            $data['banner_image'] = 'banners/' . basename($path);
         }
 
         // 3. Update model
@@ -79,5 +79,21 @@ class BannerController extends Controller
         return redirect()
             ->route('banner.index')
             ->with('status', 'banner-updated');
+    }
+
+    public function destroy(Banner $banner)
+    {
+        // 1. Delete banner image if exists
+        if ($banner->banner_image && Storage::disk('public')->exists('banners/' . $banner->banner_image)) {
+            Storage::disk('public')->delete('banners/' . $banner->banner_image);
+        }
+
+        // 2. Delete the banner from DB
+        $banner->delete();
+
+        // 3. Redirect back with flash message
+        return redirect()
+            ->route('banner.index')
+            ->with('status', 'banner-deleted');
     }
 }
