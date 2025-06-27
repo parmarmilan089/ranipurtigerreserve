@@ -3,30 +3,20 @@
 <!-- banner-section -->
 <section class="banner-section">
             <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+                @foreach ($banners as $banner)
                 <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-5.jpg)"></div>
+                    <div class="image-layer" style="background-image:url({{ asset('storage/' . $banner->banner_image) }})"></div>
                     <div class="auto-container">
                         <div class="content-box">
-                            <h3>Chitrakoot, Uttar Pradesh</h3>
-                            <h2>Where the Jungle Meets Ancient Heritage.</h2>
+                            <h3>{{$banner->title}}</h3>
+                            <h2>{{$banner->short_description}}</h2>
                             <div class="btn-box">
-                                <a href="#" class="theme-btn btn-one">Jungle Safari</a>
+                                <a href="#" class="theme-btn btn-one">{{$banner->button_text}}</a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
-                </div>  
-                <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-6.jpg)"></div>
-                    <div class="auto-container">
-                        <div class="content-box">
-                            <h3>Chitrakoot, Uttar Pradesh</h3>
-                            <h2>Where the Jungle Meets Ancient Heritage.</h2>
-                            <div class="btn-box">
-                                <a href="#" class="theme-btn btn-one">Jungle Safari</a>
-                            </div>
-                        </div>  
-                    </div>
-                </div>                         
+                </div>
+                @endforeach
             </div>
         </section>
         <!-- banner-section end -->
@@ -34,7 +24,7 @@
 
         <!-- info-section -->
         <section class="info-section">
-            <div class="bg-layer"></div>            
+            <div class="bg-layer"></div>
             <div class="auto-container">
                 <div class="inner-container">
                     <div class="row clearfix">
@@ -44,7 +34,7 @@
                                 <h5>Wild Animals</h5>
                                 <p>Ranipur’s Big five: Bear, Deer, Ground Pangolin, Tiger and Leopards with other unique species.</p>
                             </div>
-                        </div>                        
+                        </div>
                         <div class="col-lg-4 col-md-6 col-sm-12 single-column">
                             <div class="single-item">
                                 <div class="icon-box"><img src="assets/images/icons/icon-3.png" alt=""></div>
@@ -85,7 +75,7 @@
                                 <div class="sec-title">
                                     <h2>Cultural and Ecological Heritage</h2>
                                 </div>
-                                <div class="text">                                    
+                                <div class="text">
                                     <p>Ranipur Tiger Reserve, nestled in the Vindhya hills of
                                         southern Uttar Pradesh, is a rich tapestry of history,
                                         culture, and nature. At its heart lies the mystical Bedakh
@@ -102,8 +92,8 @@
                                         confluence of myth, history, and conservation makes
                                         Ranipur Tiger Reserve a place where India's past seamlessly
                                         blends with its present natural landscape, symbolizing both
-                                        cultural and ecological preservation.</p>                                    
-                                </div>                        
+                                        cultural and ecological preservation.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -126,12 +116,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row clearfix">                    
+                <div class="row clearfix">
                     <div class="col-lg-4 col-md-12 col-sm-12 content-column">
                         <div class="safari__cart">
                             <figure><img src="assets/images/banner/Main Entrance Gate-min.jpg" alt=""></figure>
                             <div class="safari__cart-heading">Facilities for tourists</div>
-                            <div class="hero__outline__cta">                                
+                            <div class="hero__outline__cta">
                                 <a href="#" class="theme-btn">Explore More</a>
                             </div>
                         </div>
@@ -140,7 +130,7 @@
                         <div class="safari__cart">
                             <figure><img src="assets/images/banner/Attractions-2.jpg" alt=""></figure>
                             <div class="safari__cart-heading">Religious site</div>
-                            <div class="hero__outline__cta">                                
+                            <div class="hero__outline__cta">
                                 <a href="#" class="theme-btn">Explore More</a>
                             </div>
                         </div>
@@ -149,7 +139,7 @@
                         <div class="safari__cart">
                             <figure><img src="assets/images/banner/Attractions-3.jpg" alt=""></figure>
                             <div class="safari__cart-heading">Jungle Safari</div>
-                            <div class="hero__outline__cta">                                
+                            <div class="hero__outline__cta">
                                 <a href="#" class="theme-btn">Explore More</a>
                             </div>
                         </div>
@@ -176,16 +166,16 @@
                             <div class="events-block-one">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><img src="assets/images/banner/plan.jpg" alt=""></figure>                                        
+                                        <figure class="image"><img src="assets/images/banner/plan.jpg" alt=""></figure>
                                     </div>
-                                    <div class="inner">                                        
+                                    <div class="inner">
                                         <h3>By Air</h3>
                                         <p>The airport at Devangana, approximately 12 km from Chitrakoot district, has been operational since March 2024. It offers
                                             connecting flights from New Delhiand Mumbai, as well as direct
                                             flights from Lucknow.</p>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 inner-column">
@@ -193,9 +183,9 @@
                             <div class="events-block-one">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><img src="assets/images/banner/bus.jpg" alt=""></figure>                                        
+                                        <figure class="image"><img src="assets/images/banner/bus.jpg" alt=""></figure>
                                     </div>
-                                    <div class="inner">                                        
+                                    <div class="inner">
                                         <h3>By Road</h3>
                                         <ul class="list-style-one clearfix">
                                             <li>Route from New Delhi to Chitrakoot: Yamuna Expressway
@@ -213,7 +203,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 inner-column">
@@ -221,9 +211,9 @@
                             <div class="events-block-one">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><img src="assets/images/banner/rail.jpg" alt=""></figure>                                        
+                                        <figure class="image"><img src="assets/images/banner/rail.jpg" alt=""></figure>
                                     </div>
-                                    <div class="inner">                                        
+                                    <div class="inner">
                                         <h3>By Rail</h3>
                                         <ul class="list-style-one clearfix">
                                             <li>From Hazrat Nizamuddin to Chitrakoot.</li>
@@ -235,13 +225,13 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
                         </div>
-                    </div>                                       
-                </div>                
+                    </div>
+                </div>
             </div>
         </section>
-        <!-- events-section end -->  
+        <!-- events-section end -->
 
 
         <!-- gallery-section -->
@@ -268,33 +258,33 @@
                     </div>
                     <div class="gallery-block-one">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-2.jpg" alt=""></figure>                            
+                            <figure class="image-box"><img src="assets/images/gallery/gallery-2.jpg" alt=""></figure>
                             <div class="overlay-content">
-                                <h3>Deer</h3>                                
+                                <h3>Deer</h3>
                             </div>
                         </div>
                     </div>
                     <div class="gallery-block-one">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-3.jpg" alt=""></figure>                            
+                            <figure class="image-box"><img src="assets/images/gallery/gallery-3.jpg" alt=""></figure>
                             <div class="overlay-content">
-                                <h3>Ground Pangolin</h3>                                
+                                <h3>Ground Pangolin</h3>
                             </div>
                         </div>
                     </div>
                     <div class="gallery-block-one">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-4.jpg" alt=""></figure>                            
+                            <figure class="image-box"><img src="assets/images/gallery/gallery-4.jpg" alt=""></figure>
                             <div class="overlay-content">
-                                <h3>Leopard</h3>                                
+                                <h3>Leopard</h3>
                             </div>
                         </div>
                     </div>
                     <div class="gallery-block-one">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-5.jpg" alt=""></figure>                            
+                            <figure class="image-box"><img src="assets/images/gallery/gallery-5.jpg" alt=""></figure>
                             <div class="overlay-content">
-                                <h3>Tiger</h3>                                
+                                <h3>Tiger</h3>
                             </div>
                         </div>
                     </div>
@@ -315,13 +305,13 @@
                                     <div class="sec-title">
                                         <h2>Geographical Location of Chitrakoot</h2>
                                     </div>
-                                    <div class="text">                                    
+                                    <div class="text">
                                         <p>Chitrakoot, often referred to as "the hills of many wonders," is a unique gift bestowed upon Uttar Pradesh by nature. Located along the banks of the Payasvani/Mandakini River in the northern part of the Vindhya mountain range, its name derives from the Sanskrit word "Chitra," meaning Ashoka, and "Koot," meaning peak or summit. It is believed that this area was once abundant with Ashoka trees in ancient times. Chitrakoot is renowned not only for its religious and cultural significance but also as an environmentally and historically vital part of the Bundelkhand cultural region.
 
                                             Ranipur Tiger Reserve, situated in this area, adds to the geographical importance of Chitrakoot. Nestled in Chitrakoot district of Uttar Pradesh, the reserve borders Banda and Prayagraj to the north, while to the southwest, it adjoins the districts of Satna and Rewa in Madhya Pradesh. Set in the lap of the Vindhya mountain range, the reserve features dense forests, vast valleys, and rolling hills. The area's dry deciduous vegetation and diverse topography make it geographically rich and unique. The Mandakini River and other water sources provide a lifeline to the region. Located on the border of Uttar Pradesh and Madhya Pradesh, the reserve plays a crucial role in connecting the ecosystems of both states, making it an ideal location for the conservation of natural resources and biodiversity.
-                                            
-                                            Overall, the region encompassing Chitrakoot and the Ranipur Tiger Reserve is significant not only from an environmental perspective but also for its cultural, religious, and natural beauty, securing a distinctive place in the geography and history of the country.</p>                                    
-                                    </div>  
+
+                                            Overall, the region encompassing Chitrakoot and the Ranipur Tiger Reserve is significant not only from an environmental perspective but also for its cultural, religious, and natural beauty, securing a distinctive place in the geography and history of the country.</p>
+                                    </div>
                                     <br />
                                     <h2>Key Information for Tourists</h2>
                                     <br />
@@ -338,7 +328,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </section>
@@ -358,7 +348,7 @@
                                     <figure class="image"><a href="blog-details.html"><img src="assets/images/news/news-1.jpg" alt=""></a></figure>
                                     <div class="post-date"><h6>16<span>dec</span></h6></div>
                                 </div>
-                                <div class="lower-content">                                    
+                                <div class="lower-content">
                                     <h3><a href="blog-details.html">how Interaction with Animal can Release</a></h3>
                                     <div class="link"><a href="blog-details.html"><i class="flaticon-right-arrow"></i></a></div>
                                 </div>
@@ -409,7 +399,7 @@
                                 <figure class="footer-logo"><a href="index-2.html"><img src="assets/images/footer-logo.png" alt=""></a></figure>
                                 <ul class="footer-social clearfix">
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>                                    
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                 </ul>
                             </div>
