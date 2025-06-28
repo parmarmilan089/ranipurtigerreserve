@@ -24,4 +24,8 @@ class HomeController extends Controller
         $geographicals = GeographicalSection::all();
         return view('home',compact('banners','infosection','about','attractions','events','photogallerys','geographicals'));
     }
+
+    public function contact(){
+        return view('contact');
+    }
 }

@@ -38,7 +38,7 @@
         <header class="main-header header-flex" id="myHeader">            
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{ route('home') }}">
                         <div class="logo-area">
                         <div class="logo-img">
                             <img src="assets/images/logo.png" alt="" />
@@ -64,7 +64,7 @@
                             <a class="nav-link" href="#reach">How to Reach</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link request-btn" href="#">Book Here</a>

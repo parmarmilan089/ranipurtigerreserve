@@ -275,7 +275,7 @@
                 <div class="row clearfix">
                     <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                         <div class="footer-widget logo-widget">
-                            <figure class="footer-logo"><a href="index-2.html"><img src="assets/images/footer-logo.png"
+                            <figure class="footer-logo"><a href="{{ route('home') }}"><img src="assets/images/footer-logo.png"
                                         alt=""></a></figure>
                             <ul class="footer-social clearfix">
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
