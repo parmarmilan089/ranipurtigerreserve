@@ -174,9 +174,7 @@
                                         <li><i class="flaticon-telephone"></i><a href="tel:+91 78394 35142">+91 78394
                                                 35142</a>
                                         </li>
-                                        <li><i class="flaticon-email"></i><a
-                                                href="mailto:dfochitrakoot1@gmail.com">dfochitrakoot1@gmail.com</a></li>
-                                        <!-- <li><i class="flaticon-pin"></i>66 broklyn golden street line new york</li> -->
+                                        <li><i class="flaticon-email"></i><a href="mailto:dfochitrakoot1@gmail.com">dfochitrakoot1@gmail.com</a></li>
                                     </ul>
                                 </div>
                             </div>
