@@ -9,7 +9,7 @@
 
   <title>Ranipur’s Big five: Bear, Deer, Ground Pangolin, Tiger and Leopards with other unique species.</title>
 
-  <link rel="icon" href="{{ asset('public/assets/images/icons/icon-1.png') }}" type="image/x-icon">
+  <link rel="icon" href="{{ asset('assets/images/icons/icon-1.png') }}" type="image/x-icon">
 
 
   <!-- Google Fonts -->
@@ -17,16 +17,16 @@
 
   <!-- Stylesheets -->
   <!-- Stylesheets -->
-  <link href="{{ asset('public/assets/css/font-awesome-all.css') }}" rel="stylesheet">
-  <link href="{{ asset('public/assets/css/flaticon.css') }}" rel="stylesheet">
-  <link href="{{ asset('public/assets/css/owl.css') }}" rel="stylesheet">
-  <link href="{{ asset('public/assets/css/bootstrap.css') }}" rel="stylesheet">
-  <link href="{{ asset('public/assets/css/jquery.fancybox.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('public/assets/css/animate.css') }}" rel="stylesheet">
-  <link href="{{ asset('public/assets/css/color.css') }}" rel="stylesheet">
-  <link href="{{ asset('public/assets/css/style.css') }}" rel="stylesheet">
-  <link href="{{ asset('public/assets/css/rtl.css') }}" rel="stylesheet">
-  <link href="{{ asset('public/assets/css/responsive.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/font-awesome-all.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/flaticon.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/owl.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/jquery.fancybox.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/color.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/rtl.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
 
   </head>
 
@@ -42,7 +42,7 @@
                       <a class="navbar-brand" href="{{ route('home') }}">
                           <div class="logo-area">
                           <div class="logo-img">
-                              <img src="{{ asset('public/assets/images/logo.png') }}" alt="" />
+                              <img src="{{ asset('assets/images/logo.png') }}" alt="" />
                           </div>
                           </div>
                       </a>
@@ -93,19 +93,19 @@
       </div>
 
 
-      <script src="{{ asset('public/assets/js/jquery.js') }}"></script>
-  <script src="{{ asset('public/assets/js/parallax.js') }}"></script>
-  <script src="{{ asset('public/assets/js/popper.min.js') }}"></script>
-  <script src="{{ asset('public/assets/js/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('public/assets/js/owl.js') }}"></script>
-  <script src="{{ asset('public/assets/js/wow.js') }}"></script>
-  <script src="{{ asset('public/assets/js/validation.js') }}"></script>
-  <script src="{{ asset('public/assets/js/jquery.fancybox.js') }}"></script>
-  <script src="{{ asset('public/assets/js/appear.js') }}"></script>
-  <script src="{{ asset('public/assets/js/scrollbar.js') }}"></script>
+      <script src="{{ asset('assets/js/jquery.js') }}"></script>
+  <script src="{{ asset('assets/js/parallax.js') }}"></script>
+  <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+  <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('assets/js/owl.js') }}"></script>
+  <script src="{{ asset('assets/js/wow.js') }}"></script>
+  <script src="{{ asset('assets/js/validation.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.fancybox.js') }}"></script>
+  <script src="{{ asset('assets/js/appear.js') }}"></script>
+  <script src="{{ asset('assets/js/scrollbar.js') }}"></script>
 
   <!-- main-js -->
-  <script src="{{ asset('public/assets/js/script.js') }}"></script>
+  <script src="{{ asset('assets/js/script.js') }}"></script>
 
   </body><!-- End of .page_wrapper -->
   <style>
