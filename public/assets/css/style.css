@@ -51,7 +51,7 @@
 ====================================================================
 
  ***/
-* {
+ * {
   margin:0px;
   padding:0px;
   border:none;
@@ -101,7 +101,7 @@ body {
 .auto-container{
   position:static;
   max-width:1200px;
-  padding:0px 15px;
+  padding:50px 15px 0;
   margin:0 auto;
 }
 
@@ -231,13 +231,14 @@ img {
   font-weight: 700;
   font-family: 'Rubik', sans-serif ;
   color: #fff !important;
-  padding: 16.5px 54px;
+  padding: 15px 35px;
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
   z-index: 1;
   letter-spacing: 2px;
   transition: all 500ms ease;
+  border-radius: 8px;
 }
 
 .theme-btn.btn-one{
@@ -247,13 +248,14 @@ img {
 .theme-btn:before{
   position: absolute;
   content: '';
-  background: #9d573f;
+  background: #f7532d;
   width: 0%;
   height: 100%;
   left: 0px;
   bottom: 0px;
   z-index: -1;
   transition: all 500ms ease;
+  border-radius: 8px;
 }
 
 .theme-btn:hover:before{
@@ -528,14 +530,19 @@ img {
 /** main-header **/
 
 .main-header{
-  position:relative;
+  position:fixed;
   z-index:999;
+  top: 0;
   width:100%;
   transition:all 500ms ease;
   -moz-transition:all 500ms ease;
   -webkit-transition:all 500ms ease;
   -ms-transition:all 500ms ease;
   -o-transition:all 500ms ease;
+}
+
+.main-header .bg-light{
+  background: transparent !important;
 }
 
 .sticky-header{
@@ -1573,7 +1580,7 @@ div#mCSB_1_container{
 .banner-carousel .slide-item{
   position: relative;
   overflow: hidden;
-  padding: 150px 0px;
+  padding: 150px 0px 50px;
 }
 
 .banner-carousel .slide-item:before{
@@ -1586,7 +1593,7 @@ div#mCSB_1_container{
   top: 0px;
   right: 0px;
   z-index: 1;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .banner-carousel .slide-item .image-layer{
@@ -1620,7 +1627,7 @@ div#mCSB_1_container{
   display: block;
   z-index:5;
   width: 100%;
-  max-width: 900px;
+  /* max-width: 900px; */
 }
 
 .banner-carousel .content-box h3{
@@ -1664,8 +1671,8 @@ div#mCSB_1_container{
   position: relative;
   display: block;
   color: #fff;
-  font-size: 60px;
-  line-height: 66px;
+  font-size: 50px;
+  line-height: 50px;
   font-weight: 900;
   margin-bottom: 39px;
   opacity: 0;
@@ -5081,8 +5088,10 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color:rgba(15, 15, 15, 0.9);
   transition: all 0.2s ease-out;
+  -webkit-backdrop-filter: blur(3px);
+   backdrop-filter: blur(3px);
 }
 
 
@@ -5101,32 +5110,56 @@ html {
 .header-flex .navbar .nav-item {
   margin: 0 5px;
 }
+
+.header-flex .navbar .nav-item.active .nav-link{  
+  color: #FFFFFF;
+}
+
+.header-flex .navbar .nav-item.active .nav-link::before{
+  position: absolute;
+  background: #f7532d;
+  width: 100%;
+  height: 4px;
+  content: "";
+  bottom: 0;
+  left: 0;
+}
+
 .header-flex .navbar .nav-link {
-  color: #0e1f30;
-  padding-left: 15px;
-  padding-right: 15px;
+  color: #FFFFFF;
+  padding: 4px 15px;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 17px;
+  position: relative;
 }
 .header-flex .navbar .nav-link.active {
   color: #1a7de7;
 }
+
 .header-flex .navbar .nav-link:hover {
-  color: #1a7de7;
+  color: #FFF;
+}
+
+.header-flex .navbar .nav-link:hover::before {
+  position: absolute;
+  background: #f7532d;
+  width: 100%;
+  height: 4px;
+  content: "";
+  bottom: 0;
+  left: 0;
 }
 .header-flex .navbar .nav-link.request-btn {
-  color: #ffffff;
-  border-radius: 5px;
-  background: #2c7f72;
-  padding: 10px 19px;
-  display: inline-block;
-  transition: all 0.2s ease-out;
-  line-height: 14px;
-  font-weight: 500;
-  margin-top: 8px;
+  color: #FFFFFF;  
+  background: #f7532d;  
+  border: 1px solid #f7532d;
+  transition: all 0.2s ease-out;    
+  border-radius: 6px;
 }
 .header-flex .navbar .nav-link.request-btn:hover {
-  background: #9d583f;
+  background: #f7532d;
+  border-radius: 6px;
+  color: #FFFFFF;  
 }
 
 
