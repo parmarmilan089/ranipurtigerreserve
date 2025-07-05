@@ -47,13 +47,19 @@ class EventSectionController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'string',
-            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'bullet_points' => 'string',
+            'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'bullet_points' => 'nullable|string',
         ]);
 
         $event = EventSection::findOrFail($id);
 
+        // Just save bullet points string
+        if ($request->has('bullet_points')) {
+            $data['bullet_points'] = $request->input('bullet_points');
+        }
+
+        // Image upload
         if ($request->hasFile('image')) {
             if ($event->image) {
                 Storage::disk('public')->delete($event->image);
