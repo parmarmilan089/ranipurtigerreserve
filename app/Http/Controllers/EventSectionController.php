@@ -21,21 +21,26 @@ class EventSectionController extends Controller
 
     public function store(Request $request)
     {
+        // Validate inputs
         $data = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'string',
-            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'bullet_points' => 'string',
+            'description' => 'nullable|string',
+            'image' => 'required|image|mimes:jpg,jpeg,png',
+            'bullet_points' => 'nullable|string',
         ]);
 
+        // Handle image upload
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('event_images', 'public');
         }
 
+        // Store record
         EventSection::create($data);
 
-        return redirect()->route('event-section.index')->with('status', 'Event section created successfully!');
+        return redirect()->route('event-section.index')
+            ->with('status', 'Event section created successfully!');
     }
+
 
     public function edit($id)
     {
@@ -48,7 +53,7 @@ class EventSectionController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png',
             'bullet_points' => 'nullable|string',
         ]);
 

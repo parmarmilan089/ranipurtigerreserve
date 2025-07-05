@@ -5,22 +5,44 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white p-6 shadow sm:rounded-lg">
-            <form method="POST" action="{{ route('event-section.update', $event->id) }}" enctype="multipart/form-data"
-                class="space-y-6">
+
+            {{-- Display all validation errors --}}
+            @if ($errors->any())
+                <div class="mb-4 text-red-600">
+                    <ul class="list-disc pl-5">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <form method="POST" action="{{ route('event-section.update', $event->id) }}"
+                enctype="multipart/form-data" class="space-y-6" onsubmit="combineBullets()">
                 @csrf
                 @method('PUT')
 
+                {{-- Title --}}
                 <div>
                     <x-input-label for="title" :value="__('Title')" />
-                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="old('title', $event->title)" required />
+                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full"
+                        :value="old('title', $event->title)" required />
+                    @error('title')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
+                {{-- Description --}}
                 <div>
                     <x-input-label for="description" :value="__('Description')" />
                     <textarea name="description"
                         class="w-full border-gray-300 rounded">{{ old('description', $event->description) }}</textarea>
+                    @error('description')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
+                {{-- Bullet Points --}}
                 <div>
                     <x-input-label :value="__('Bullet Points')" />
                     <div id="bullet-container">
@@ -35,25 +57,33 @@
                     </div>
                     <button type="button" onclick="addBullet()" class="text-blue-600">+ Add Bullet Point</button>
                     <input type="hidden" name="bullet_points" id="bullet_points_combined" />
+                    @error('bullet_points')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
+                {{-- Image --}}
                 <div>
                     <x-input-label for="image" :value="__('Image')" />
                     <input type="file" name="image" id="image" class="block w-full">
                     @if ($event->image)
                         <img src="{{ asset('storage/' . $event->image) }}" class="w-40 mt-4 rounded shadow">
                     @endif
+                    @error('image')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
-                <x-primary-button onclick="combineBullets()">Update Event Section</x-primary-button>
+                {{-- Submit Button --}}
+                <x-primary-button>Update Event Section</x-primary-button>
             </form>
         </div>
     </div>
 
+    {{-- JavaScript --}}
     <script>
         function addBullet() {
             const container = document.getElementById('bullet-container');
-
             const wrapper = document.createElement('div');
             wrapper.className = 'bullet-wrapper flex items-center gap-2 mb-2';
 
