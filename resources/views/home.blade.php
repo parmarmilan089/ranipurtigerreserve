@@ -5,15 +5,26 @@
         <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
             @foreach ($banners as $banner)
                 <div class="slide-item">
-                    <div class="image-layer" style="background-image:url({{ asset('storage/' . $banner->banner_image) }})">
+                    <div class="image-layer" style="background-image:url({{ asset('assets/images/backgrond-main.jpg') }})">
                     </div>
                     <div class="auto-container">
                         <div class="content-box">
-                            <h3>{{ $banner->title }}</h3>
-                            <h2>{{ $banner->short_description }}</h2>
-                            <div class="btn-box">
-                                <a href="#" class="theme-btn btn-one">{{ $banner->button_text }}</a>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>{{ $banner->title }}</h3>
+                                    <h2>{{ $banner->short_description }}</h2>
+                                    <div class="btn-box">
+                                        <a href="#" class="theme-btn btn-one">{{ $banner->button_text }}</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img src="{{ asset('assets/images/banner-1.png')}}" alt="" />
+                                    </figure>
+                                </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -337,4 +348,19 @@
     <button class="scroll-top scroll-to-target" data-target="html">
         <i class="fal fa-long-arrow-up"></i>
     </button>
+
+    <style>
+        .banner-carousel .slide-item:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #0e131f;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+    opacity: 0.6;
+}
+    </style>
 @endsection
