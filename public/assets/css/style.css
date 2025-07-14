@@ -1,4 +1,4 @@
- 
+
 /* Css For Weldlfe */
 
 /************ TABLE OF CONTENTS ***************
@@ -44,7 +44,7 @@
 
 
 
-/*** 
+/***
 
 ====================================================================
   Reset
@@ -59,7 +59,7 @@
 }
 
 
-/*** 
+/***
 
 ====================================================================
   Global Settings
@@ -142,7 +142,7 @@ input,button,select,textarea{
 ul,li{
   list-style:none;
   padding:0px;
-  margin:0px; 
+  margin:0px;
 }
 
 input{
@@ -469,7 +469,7 @@ img {
 }
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading{
-  
+
 }
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading:before{
@@ -478,7 +478,7 @@ img {
 
 .handle-preloader .animation-preloader .spinner{
   border: 3px solid #ffffff;
-  border-top-color: rgba(255, 255, 255, 0.5); 
+  border-top-color: rgba(255, 255, 255, 0.5);
 }
 
 /* AnimaciÃ³n del preloader */
@@ -518,7 +518,7 @@ img {
 
 
 
-/*** 
+/***
 
 ====================================================================
                         Home-Page-One
@@ -988,7 +988,7 @@ img {
 
 .main-menu .navigation > li > ul.from-right{
   left:auto;
-  right:0px;  
+  right:0px;
 }
 
 .main-menu .navigation > li > ul > li{
@@ -1003,7 +1003,7 @@ img {
 }
 
 .main-menu .navigation > li > ul > li:last-child{
-  border-bottom:none; 
+  border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li > a{
@@ -1044,7 +1044,7 @@ img {
   font-size:16px;
   font-weight:800;
   text-align:center;
-  z-index:5;  
+  z-index:5;
 }
 
 .main-menu .navigation > li > ul > li > ul{
@@ -1070,7 +1070,7 @@ img {
 
 .main-menu .navigation > li > ul > li > ul.from-right{
   left:auto;
-  right:0px;  
+  right:0px;
 }
 
 .main-menu .navigation > li > ul > li > ul > li{
@@ -1081,11 +1081,11 @@ img {
 }
 
 .main-menu .navigation > li > ul > li > ul > li:last-child{
-  border-bottom:none; 
+  border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li > ul > li:last-child{
-  border-bottom:none; 
+  border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li > ul > li > a{
@@ -1121,7 +1121,7 @@ img {
   line-height:24px;
   font-size:16px;
   font-weight:900;
-  z-index:5;  
+  z-index:5;
 }
 
 .main-menu .navigation > li.dropdown:hover > ul,
@@ -1152,7 +1152,7 @@ img {
   -moz-transition:all 300ms ease;
   -webkit-transition:all 500ms ease;
   -ms-transition:all 300ms ease;
-  -o-transition:all 300ms ease; 
+  -o-transition:all 300ms ease;
 }
 
 .main-menu .navigation li.dropdown .dropdown-btn{
@@ -1173,7 +1173,7 @@ img {
 
 .main-menu .navigation li.current.dropdown .dropdown-btn,
 .main-menu .navigation li:hover .dropdown-btn{
-  
+
 }
 
 .main-menu .navigation li.dropdown ul li.dropdown .dropdown-btn{
@@ -1284,13 +1284,13 @@ img {
 }
 
 .mobile-menu .navbar-collapse{
-  display:block !important; 
+  display:block !important;
 }
 
 .mobile-menu .nav-logo{
   position:relative;
   padding:30px 25px;
-  text-align:left;  
+  text-align:left;
 }
 
 .mobile-menu-visible{
@@ -1428,7 +1428,7 @@ img {
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
   -o-transition: all 500ms ease;
-  transition: all 500ms ease; 
+  transition: all 500ms ease;
 }
 
 .mobile-menu .navigation li ul li > a{
@@ -1448,7 +1448,7 @@ img {
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
   -o-transition: all 500ms ease;
-  transition: all 500ms ease; 
+  transition: all 500ms ease;
 }
 
 .mobile-menu .navigation li.current > a:before{
@@ -1472,16 +1472,16 @@ img {
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
   -o-transition: all 500ms ease;
-  transition: all 500ms ease; 
+  transition: all 500ms ease;
   z-index:5;
 }
 
 .mobile-menu .navigation li.dropdown .dropdown-btn.open{
-  background:#fff; 
+  background:#fff;
   color: #3b3b3b;
   -webkit-transform:rotate(90deg);
   -ms-transform:rotate(90deg);
-  transform:rotate(90deg);  
+  transform:rotate(90deg);
 }
 
 .mobile-menu .navigation li > ul,
@@ -1510,11 +1510,11 @@ img {
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
   -o-transition: all 500ms ease;
-  transition: all 500ms ease; 
+  transition: all 500ms ease;
 }
 
 .mobile-menu .social-links li a:hover{
-  
+
 }
 
 div#mCSB_1_container{
@@ -1547,7 +1547,7 @@ div#mCSB_1_container{
 }
 
 .mobile-menu .contact-info ul li a:hover{
-  
+
 }
 
 .mobile-menu .contact-info ul li:last-child{
@@ -1803,7 +1803,7 @@ div#mCSB_1_container{
 
 .info-section .inner-container{
   position: relative;
-  display: block;  
+  display: block;
   padding: 30px 0px;
 }
 
@@ -2541,7 +2541,7 @@ div#mCSB_1_container{
 
 .events-block-one .inner-box{
   position: relative;
-  display: block;  
+  display: block;
   border-bottom: 1px solid #e6e1db;
 }
 
@@ -3085,7 +3085,7 @@ div#mCSB_1_container{
 }
 
 
-/*** 
+/***
 
 ====================================================================
                         Home-Page-Two
@@ -3122,7 +3122,7 @@ div#mCSB_1_container{
   color: #fff;
 }
 
-.header-style-two .header-lower .main-menu .navigation > li.current > a, 
+.header-style-two .header-lower .main-menu .navigation > li.current > a,
 .header-style-two .header-lower .main-menu .navigation > li:hover > a{
 
 }
@@ -3304,7 +3304,7 @@ div#mCSB_1_container{
 }
 
 .banner-style-two .video-box .link a:hover{
-  
+
 }
 
 .image_block_three .image-box{
@@ -3500,7 +3500,7 @@ div#mCSB_1_container{
 }
 
 .tabs-box .tab.active-tab{
-  display:block;  
+  display:block;
 }
 
 .tabs-box .tab{
@@ -3986,7 +3986,7 @@ div#mCSB_1_container{
 }
 
 .news-block-three .inner-box .post-info li a:hover{
-  
+
 }
 
 .news-block-three .inner-box .post-info li i{
@@ -4035,7 +4035,7 @@ div#mCSB_1_container{
 }
 
 
-/*** 
+/***
 
 ====================================================================
                         About-Page
@@ -4360,7 +4360,7 @@ div#mCSB_1_container{
 }
 
 
-/*** 
+/***
 
 ====================================================================
                         Animals-Page
@@ -4452,7 +4452,7 @@ div#mCSB_1_container{
 }
 
 
-/*** 
+/***
 
 ====================================================================
                         Blog-Page
@@ -4894,7 +4894,7 @@ div#mCSB_1_container{
 }
 
 .blog-details-content .comment-box .comment .reply-btn:hover{
-  
+
 }
 
 .blog-details-content .comment-box{
@@ -4943,7 +4943,7 @@ div#mCSB_1_container{
 }
 
 
-/*** 
+/***
 
 ====================================================================
                         Contact-Page
@@ -5111,7 +5111,7 @@ html {
   margin: 0 5px;
 }
 
-.header-flex .navbar .nav-item.active .nav-link{  
+.header-flex .navbar .nav-item.active .nav-link{
   color: #FFFFFF;
 }
 
@@ -5150,16 +5150,16 @@ html {
   left: 0;
 }
 .header-flex .navbar .nav-link.request-btn {
-  color: #FFFFFF;  
-  background: #f7532d;  
+  color: #FFFFFF;
+  background: #f7532d;
   border: 1px solid #f7532d;
-  transition: all 0.2s ease-out;    
+  transition: all 0.2s ease-out;
   border-radius: 6px;
 }
 .header-flex .navbar .nav-link.request-btn:hover {
   background: #f7532d;
   border-radius: 6px;
-  color: #FFFFFF;  
+  color: #FFFFFF;
 }
 
 

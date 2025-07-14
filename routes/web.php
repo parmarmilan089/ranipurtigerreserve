@@ -9,10 +9,14 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoSectionController;
 use App\Http\Controllers\PhotoGalleryController;
+use App\Http\Controllers\ContactFormController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
+// Contact form submission (frontend)
+Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.submit');
 
 
 Route::get('/dashboard', function () {
@@ -61,5 +65,12 @@ Route::middleware('auth')->group(function () {
 });
 Route::resource('banner', BannerController::class)->middleware(['auth']);
 Route::resource('info-section', InfoSectionController::class)->middleware(['auth']);
+
+// Admin contact form management
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/contact-forms', [ContactFormController::class, 'index'])->name('admin.contact-forms.index');
+    Route::get('/admin/contact-forms/{id}', [ContactFormController::class, 'show'])->name('admin.contact-forms.show');
+    Route::delete('/admin/contact-forms/{id}', [ContactFormController::class, 'destroy'])->name('admin.contact-forms.destroy');
+});
 
 require __DIR__ . '/auth.php';
