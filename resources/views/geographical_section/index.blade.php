@@ -29,12 +29,12 @@
                             <td class="px-4 py-2">{{ $section->title }}</td>
                             <td class="px-4 py-2">{{ $section->bullet_title }}</td>
                             <td class="px-4 py-2">
-                                <ul class="list-disc pl-4">
-                                    @foreach (explode(',', $section->bullet_points ?? '') as $bullet)
-                                        <li>{{ $bullet }}</li>
-                                    @endforeach
-                                </ul>
-                            </td>
+    <ul class="list-disc pl-4">
+        @foreach (json_decode($section->bullet_points ?? '[]') as $bullet)
+            <li>{{ $bullet }}</li>
+        @endforeach
+    </ul>
+</td>
                             <td class="px-4 py-2">
                                 <a href="{{ route('geographical-section.edit', $section->id) }}" class="text-indigo-600 hover:underline">Edit</a>
                                 <form action="{{ route('geographical-section.destroy', $section->id) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Delete this section?')">

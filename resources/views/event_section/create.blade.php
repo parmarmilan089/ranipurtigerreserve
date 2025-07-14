@@ -8,49 +8,81 @@
             <form method="POST" action="{{ route('event-section.store') }}" enctype="multipart/form-data" class="space-y-6">
                 @csrf
 
+                <!-- Title -->
                 <div>
                     <x-input-label for="title" :value="__('Title')" />
                     <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="old('title')" required />
+                    @error('title')
+                        <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
+                <!-- Description -->
                 <div>
                     <x-input-label for="description" :value="__('Description')" />
                     <textarea name="description" class="w-full border-gray-300 rounded">{{ old('description') }}</textarea>
+                    @error('description')
+                        <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
-                <div>
-                    <x-input-label :value="__('Bullet Points')" />
-                    <div id="bullet-container">
-                        <input type="text" name="bullet_points[]" class="bullet-point w-full mt-1 mb-2" />
-                    </div>
-                    <button type="button" onclick="addBullet()" class="text-blue-600">+ Add Bullet Point</button>
-                    <input type="hidden" name="bullet_points" id="bullet_points_combined" />
+                <!-- Bullet Points -->
+                <!-- Bullet Points -->
+<div>
+    <x-input-label :value="__('Bullet Points')" />
+    <div id="bullet-container">
+        @if(old('bullet_points'))
+            @foreach(old('bullet_points') as $point)
+                <div class="flex items-center gap-2 mb-2">
+                    <input type="text" name="bullet_points[]" class="bullet-point w-full" value="{{ $point }}" />
+                    <button type="button" class="text-red-600" onclick="removeBullet(this)">Remove</button>
                 </div>
+            @endforeach
+        @else
+            <div class="flex items-center gap-2 mb-2">
+                <input type="text" name="bullet_points[]" class="bullet-point w-full" />
+                <button type="button" class="text-red-600" onclick="removeBullet(this)">Remove</button>
+            </div>
+        @endif
+    </div>
+    <button type="button" onclick="addBullet()" class="text-blue-600">+ Add Bullet Point</button>
 
+    @error('bullet_points')
+        <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+    @enderror
+    @error('bullet_points.*')
+        <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+    @enderror
+</div>
+
+                <!-- Image -->
                 <div>
                     <x-input-label for="image" :value="__('Image')" />
                     <input type="file" name="image" id="image" class="block w-full">
+                    @error('image')
+                        <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
-                <x-primary-button onclick="combineBullets()">Save Event Section</x-primary-button>
+                <x-primary-button>Save Event Section</x-primary-button>
             </form>
         </div>
     </div>
-
     <script>
-        function addBullet() {
-            const container = document.getElementById('bullet-container');
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.name = 'bullet_points[]';
-            input.className = 'bullet-point w-full mt-1 mb-2';
-            container.appendChild(input);
-        }
+    function addBullet() {
+        const container = document.getElementById('bullet-container');
+        const wrapper = document.createElement('div');
+        wrapper.className = 'flex items-center gap-2 mb-2';
+        wrapper.innerHTML = `
+            <input type="text" name="bullet_points[]" class="bullet-point w-full" />
+            <button type="button" class="text-red-600" onclick="removeBullet(this)">Remove</button>
+        `;
+        container.appendChild(wrapper);
+    }
 
-        function combineBullets() {
-            const inputs = document.querySelectorAll('.bullet-point');
-            const values = [...inputs].map(i => i.value).filter(Boolean);
-            document.getElementById('bullet_points_combined').value = values.join(',');
-        }
-    </script>
+    function removeBullet(button) {
+        const wrapper = button.parentElement;
+        wrapper.remove();
+    }
+</script>
 </x-app-layout>

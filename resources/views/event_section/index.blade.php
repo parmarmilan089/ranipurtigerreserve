@@ -33,11 +33,11 @@
                                 @endif
                             </td>
                             <td class="px-4 py-2">
-                                <ul class="list-disc pl-4">
-                                    @foreach (explode(',', $event->bullet_points) as $bullet)
-                                        <li>{{ $bullet }}</li>
-                                    @endforeach
-                                </ul>
+                            <ul class="list-disc pl-4">
+    @foreach (json_decode($event->bullet_points, true) ?? [] as $bullet)
+        <li>{{ $bullet }}</li>
+    @endforeach
+</ul>
                             </td>
                             <td class="px-4 py-2">
                                 <a href="{{ route('event-section.edit', $event->id) }}" class="text-indigo-600 hover:underline">Edit</a>

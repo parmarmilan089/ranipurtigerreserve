@@ -23,14 +23,17 @@ class EventSectionController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'string',
+            'description' => 'nullable|string',
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'bullet_points' => 'string',
+            'bullet_points' => 'nullable|array',
+            'bullet_points.*' => 'nullable|string',
         ]);
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('event_images', 'public');
         }
+
+        $data['bullet_points'] = json_encode(array_filter($data['bullet_points'] ?? []));
 
         EventSection::create($data);
 
@@ -47,11 +50,11 @@ class EventSectionController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'string',
-            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'bullet_points' => 'string',
+            'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'bullet_points' => 'nullable|array',
+            'bullet_points.*' => 'nullable|string',
         ]);
-
         $event = EventSection::findOrFail($id);
 
         if ($request->hasFile('image')) {
@@ -60,6 +63,8 @@ class EventSectionController extends Controller
             }
             $data['image'] = $request->file('image')->store('event_images', 'public');
         }
+
+        $data['bullet_points'] = json_encode(array_filter($data['bullet_points'] ?? []));
 
         $event->update($data);
 

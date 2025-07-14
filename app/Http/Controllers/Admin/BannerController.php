@@ -48,31 +48,27 @@ class BannerController extends Controller
     }
 
     public function update(Request $request, Banner $banner)
-    {
-        // 1. Validate
-        $data = $request->validate([
-            'title'             => 'required|string|max:255',
-            'short_description' => 'nullable|string',
-            'button_text'       => 'nullable|string|max:100',
-            'banner_image'      => 'nullable|image|mimes:jpg,jpeg,png,svg',
-        ]);
+{
+    // 1. Validate input
+    $data = $request->validate([
+        'title'             => 'required|string|max:255',
+        'short_description' => 'nullable|string',
+        'button_text'       => 'nullable|string|max:100',
+        'banner_image'      => 'required|image|mimes:jpg,jpeg,png|max:2048', // validation rules for image
+    ]);
 
-        // 2. Handle new image upload
-        if ($request->hasFile('banner_image')) {
-            // Delete old image if exists
-            if ($banner->banner_image && Storage::disk('public')->exists($banner->banner_image)) {
-                Storage::disk('public')->delete($banner->banner_image);
-            }
-
-            // Store new file
-            $path = $request->file('banner_image')
-                ->store('banners', 'public');
-
-            // Extract filename (without path) or keep full path as you prefer
-            $data['banner_image'] = 'banners/' . basename($path);
+    // 2. Handle image upload
+    if ($request->hasFile('banner_image')) {
+        if ($banner->banner_image && Storage::disk('public')->exists($banner->banner_image)) {
+            Storage::disk('public')->delete($banner->banner_image);
         }
 
-        // 3. Update model
+        $path = $request->file('banner_image')->store('banners', 'public');
+        $data['banner_image'] = $path;
+    }
+    $banner->update($data);
+
+        // 3. Update banner data
         $banner->update($data);
 
         // 4. Redirect with flash
