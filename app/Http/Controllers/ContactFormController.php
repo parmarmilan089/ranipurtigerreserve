@@ -30,23 +30,24 @@ class ContactFormController extends Controller
     }
 
     // Admin: List all contact form submissions
+
     public function index()
     {
-        $contacts = ContactForm::latest()->paginate(20);
-        return view('admin.contact_forms.index', compact('contacts'));
+        $forms = ContactForm::latest()->paginate(10);
+        return view('admin.contact_forms.index', compact('forms'));
     }
 
     // Admin: View a single contact form submission
     public function show($id)
     {
-        $contact = ContactForm::findOrFail($id);
-        return view('admin.contact_forms.show', compact('contact'));
+        $form = ContactForm::findOrFail($id);
+        return view('admin.contact_forms.show', compact('form'));
     }
 
     // Admin: Delete a contact form submission
     public function destroy($id)
-    {
-        $contact = ContactForm::findOrFail($id);
+        {
+            $contact = ContactForm::findOrFail($id);
         $contact->delete();
         return redirect()->route('admin.contact-forms.index')->with('success', 'Contact form deleted successfully.');
     }
