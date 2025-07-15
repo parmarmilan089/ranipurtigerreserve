@@ -12,4 +12,8 @@ class GeographicalSection extends Model
         'bullet_title',
         'bullet_points',
     ];
+
+    protected $casts = [
+        'bullet_points' => 'array',
+    ];
 }

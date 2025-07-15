@@ -27,15 +27,14 @@
                 <div>
                     <x-input-label :value="__('Bullet Points')" />
                     <div id="bullet-container">
-                        @foreach (explode(',', $section->bullet_points ?? '') as $point)
+                        @foreach (($section->bullet_points ?? []) as $point)
                             <input type="text" name="bullet_points[]" class="bullet-point w-full mt-1 mb-2" value="{{ $point }}" />
                         @endforeach
                     </div>
                     <button type="button" onclick="addBullet()" class="text-blue-600">+ Add Bullet Point</button>
-                    <input type="hidden" name="bullet_points_combined" id="bullet_points_combined" />
                 </div>
 
-                <x-primary-button onclick="combineBullets()">Update Section</x-primary-button>
+                <x-primary-button>Update Section</x-primary-button>
             </form>
         </div>
     </div>
@@ -48,12 +47,6 @@
             input.name = 'bullet_points[]';
             input.className = 'bullet-point w-full mt-1 mb-2';
             container.appendChild(input);
-        }
-
-        function combineBullets() {
-            const inputs = document.querySelectorAll('.bullet-point');
-            const values = [...inputs].map(i => i.value).filter(Boolean);
-            document.getElementById('bullet_points_combined').value = values.join(',');
         }
     </script>
 </x-app-layout>

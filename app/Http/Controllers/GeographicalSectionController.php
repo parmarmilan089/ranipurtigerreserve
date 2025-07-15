@@ -24,14 +24,15 @@ class GeographicalSectionController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'bullet_title' => 'nullable|string|max:255',
-            'bullet_points_combined' => 'nullable|string'
+            'bullet_points' => 'nullable|array',
+            'bullet_points.*' => 'nullable|string',
         ]);
 
         GeographicalSection::create([
             'title' => $request->title,
             'description' => $request->description,
             'bullet_title' => $request->bullet_title,
-            'bullet_points' => $request->bullet_points_combined,
+            'bullet_points' => $request->bullet_points ?? [],
         ]);
 
         return redirect()->route('geographical-section.index')->with('status', 'Geographical section added!');
@@ -49,7 +50,8 @@ class GeographicalSectionController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'bullet_title' => 'nullable|string|max:255',
-            'bullet_points_combined' => 'nullable|string'
+            'bullet_points' => 'nullable|array',
+            'bullet_points.*' => 'nullable|string',
         ]);
 
         $section = GeographicalSection::findOrFail($id);
@@ -58,7 +60,7 @@ class GeographicalSectionController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'bullet_title' => $request->bullet_title,
-            'bullet_points' => $request->bullet_points_combined,
+            'bullet_points' => $request->bullet_points ?? [],
         ]);
 
         return redirect()->route('geographical-section.index')->with('status', 'Geographical section updated!');
