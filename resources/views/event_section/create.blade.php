@@ -21,10 +21,12 @@
                 <div>
                     <x-input-label :value="__('Bullet Points')" />
                     <div id="bullet-container">
-                        <input type="text" name="bullet_points[]" class="bullet-point w-full mt-1 mb-2" />
+                        <div class="bullet-input-group">
+                            <input type="text" name="bullet_points[]" class="bullet-point w-full mt-1 mb-2 inline-block" />
+                            <button type="button" class="delete-bullet text-red-600 ml-2" onclick="deleteBullet(this)">Delete</button>
+                        </div>
                     </div>
                     <button type="button" onclick="addBullet()" class="text-blue-600">+ Add Bullet Point</button>
-                    <input type="hidden" name="bullet_points" id="bullet_points_combined" />
                 </div>
 
                 <div>
@@ -32,25 +34,21 @@
                     <input type="file" name="image" id="image" class="block w-full">
                 </div>
 
-                <x-primary-button onclick="combineBullets()">Save Event Section</x-primary-button>
+                <x-primary-button>Save Event Section</x-primary-button>
             </form>
         </div>
     </div>
 
     <script>
-        function addBullet() {
+        function addBullet(value = '') {
             const container = document.getElementById('bullet-container');
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.name = 'bullet_points[]';
-            input.className = 'bullet-point w-full mt-1 mb-2';
-            container.appendChild(input);
+            const group = document.createElement('div');
+            group.className = 'bullet-input-group';
+            group.innerHTML = `<input type="text" name="bullet_points[]" class="bullet-point w-full mt-1 mb-2 inline-block" value="${value}"> <button type="button" class="delete-bullet text-red-600 ml-2" onclick="deleteBullet(this)">Delete</button>`;
+            container.appendChild(group);
         }
-
-        function combineBullets() {
-            const inputs = document.querySelectorAll('.bullet-point');
-            const values = [...inputs].map(i => i.value).filter(Boolean);
-            document.getElementById('bullet_points_combined').value = values.join(',');
+        function deleteBullet(btn) {
+            btn.parentElement.remove();
         }
     </script>
 </x-app-layout>

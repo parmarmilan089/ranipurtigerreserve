@@ -25,12 +25,15 @@ class EventSectionController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'string',
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'bullet_points' => 'string',
+            'bullet_points' => 'nullable|array',
+            'bullet_points.*' => 'nullable|string',
         ]);
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('event_images', 'public');
         }
+
+        $data['bullet_points'] = $data['bullet_points'] ?? [];
 
         EventSection::create($data);
 
@@ -49,7 +52,8 @@ class EventSectionController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'string',
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'bullet_points' => 'string',
+            'bullet_points' => 'nullable|array',
+            'bullet_points.*' => 'nullable|string',
         ]);
 
         $event = EventSection::findOrFail($id);
@@ -60,6 +64,8 @@ class EventSectionController extends Controller
             }
             $data['image'] = $request->file('image')->store('event_images', 'public');
         }
+
+        $data['bullet_points'] = $data['bullet_points'] ?? [];
 
         $event->update($data);
 

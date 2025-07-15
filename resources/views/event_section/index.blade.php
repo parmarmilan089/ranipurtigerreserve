@@ -34,7 +34,7 @@
                             </td>
                             <td class="px-4 py-2">
                                 <ul class="list-disc pl-4">
-                                    @foreach (explode(',', $event->bullet_points) as $bullet)
+                                    @foreach (($event->bullet_points ?? []) as $bullet)
                                         <li>{{ $bullet }}</li>
                                     @endforeach
                                 </ul>

@@ -146,8 +146,7 @@
                                         <p>{{ $event['description'] }}</p>
                                         @if ($event['bullet_points'] != null)
                                             <ul class="list-style-one clearfix">
-
-                                                @foreach (explode(',', $event['bullet_points']) as $bullet)
+                                                @foreach (($event['bullet_points'] ?? []) as $bullet)
                                                     <li>{{ $bullet }}</li>
                                                 @endforeach
                                             </ul>
