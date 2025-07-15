@@ -42,6 +42,11 @@
                     {{ __('Geographical-section') }}
                 </x-nav-link>
             </li>
+            <li>
+                <x-nav-link :href="route('contact-forms.index')" :active="request()->routeIs('contact-forms.*')" class="w-full text-left px-4 py-2 rounded-md hover:bg-gray-100 transition">
+                    {{ __('Contact-forms') }}
+                </x-nav-link>
+            </li>
         </ul>
         <div class="mt-8 border-t pt-4 px-4">
             <div class="flex items-center space-x-2 mb-2">
