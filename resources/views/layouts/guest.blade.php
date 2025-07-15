@@ -21,7 +21,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
                 <a href="/">
-                    <img src="/assets/images/logo.png" alt="Ranipur Tiger Reserve Logo" class="w-32 h-auto mx-auto" />
+                    <img src="/assets/images/logo.png" alt="Ranipur Tiger Reserve Logo" class="w-32 h-auto mx-auto" width="100px"/>
                 </a>
             </div>
 
