@@ -94,31 +94,38 @@
                             <h2>have question? <br />drop a line</h2>
                         </div>
                         <div class="form-inner">
-                            <form method="post" action="https://azim.commonsupport.com/Weldlfe/sendemail.php"
-                                id="contact-form" class="default-form" novalidate="novalidate">
+                            @if(session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+                            @if($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul class="mb-0">
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <form method="post" action="{{ route('contact.submit') }}" id="contact-form" class="default-form" novalidate="novalidate">
+                                @csrf
                                 <div class="row clearfix">
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="text" name="username" placeholder="Full name" required=""
-                                            aria-required="true">
+                                        <input type="text" name="username" placeholder="Full name" required="" aria-required="true" value="{{ old('username') }}">
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="email" name="email" placeholder="Email address" required=""
-                                            aria-required="true">
+                                        <input type="email" name="email" placeholder="Email address" required="" aria-required="true" value="{{ old('email') }}">
                                     </div>
                                     <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                        <input type="text" name="phone" required="" placeholder="Phone"
-                                            aria-required="true">
+                                        <input type="text" name="phone" required="" placeholder="Phone" aria-required="true" value="{{ old('phone') }}">
                                     </div>
                                     <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                        <input type="text" name="subject" required="" placeholder="Subject"
-                                            aria-required="true">
+                                        <input type="text" name="subject" required="" placeholder="Subject" aria-required="true" value="{{ old('subject') }}">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <textarea name="message" placeholder="Write a message"></textarea>
+                                        <textarea name="message" placeholder="Write a message">{{ old('message') }}</textarea>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn mr-0">
-                                        <button class="theme-btn btn-one" type="submit" name="submit-form"><span>Submit
-                                                comment</span></button>
+                                        <button class="theme-btn btn-one" type="submit" name="submit-form"><span>Submit comment</span></button>
                                     </div>
                                 </div>
                             </form>

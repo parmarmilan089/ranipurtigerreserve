@@ -29,6 +29,9 @@
                             <td class="px-4 py-2">{{ $section->title }}</td>
                             <td class="px-4 py-2">{{ $section->bullet_title }}</td>
                             <td class="px-4 py-2">
+                                @if($section->bullet_title)
+                                    <div class="font-semibold mb-1">{{ $section->bullet_title }}</div>
+                                @endif
                                 <ul class="list-disc pl-4">
                                     @foreach (explode(',', $section->bullet_points ?? '') as $bullet)
                                         <li>{{ $bullet }}</li>
