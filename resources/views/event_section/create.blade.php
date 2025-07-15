@@ -27,6 +27,12 @@
                         </div>
                     </div>
                     <button type="button" onclick="addBullet()" class="text-blue-600">+ Add Bullet Point</button>
+                    @error('bullet_points')
+                        <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+                    @enderror
+                    @error('bullet_points.*')
+                        <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div>
