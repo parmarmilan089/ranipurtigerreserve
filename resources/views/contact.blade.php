@@ -37,7 +37,7 @@
         <!-- Page Title -->
         <section class="page-title">
             <div class="img-wrap parallax-demo-1">
-                <div class="parallax-inner back-img" style="background-image: url(assets/images/banner/banner-5.jpg);">
+                <div class="parallax-inner back-img" style="background-image: url(assets/images/backgrond-main.jpg);">
                 </div>
             </div>
             <div class="auto-container">
@@ -199,4 +199,7 @@
             <i class="fal fa-long-arrow-up"></i>
         </button>
     </div>
+    <style>ul.bread-crumb.clearfix li, ul.bread-crumb.clearfix li a {
+    color: #fff;
+}</style>
 @endsection
