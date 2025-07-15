@@ -24,7 +24,7 @@
                                     </figure>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -210,7 +210,7 @@
                                     <h2>{{ $geographical['bullet_title'] }}</h2>
                                     <br />
                                     <ul class="list-style-one clearfix">
-                                        @foreach (explode(',', $geographical['bullet_points'] ?? '') as $point)
+                                        @foreach (($geographical['bullet_points'] ?? []) as $point)
                                             <li>{{ $point }}</li>
                                         @endforeach
                                     </ul>
