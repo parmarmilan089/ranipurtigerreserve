@@ -73,4 +73,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/contact-forms/{id}', [ContactFormController::class, 'destroy'])->name('contact-forms.destroy');
 });
 
+// Redirect register route to login
+Route::match(['get', 'post'], 'register', function () {
+    return redirect('login');
+});
+
 require __DIR__ . '/auth.php';
