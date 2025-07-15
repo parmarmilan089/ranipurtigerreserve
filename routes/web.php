@@ -68,9 +68,9 @@ Route::resource('info-section', InfoSectionController::class)->middleware(['auth
 
 // Admin contact form management
 Route::middleware('auth')->group(function () {
-    Route::get('/admin/contact-forms', [ContactFormController::class, 'index'])->name('admin.contact-forms.index');
-    Route::get('/admin/contact-forms/{id}', [ContactFormController::class, 'show'])->name('admin.contact-forms.show');
-    Route::delete('/admin/contact-forms/{id}', [ContactFormController::class, 'destroy'])->name('admin.contact-forms.destroy');
+    Route::get('/contact-forms', [ContactFormController::class, 'index'])->name('admin.contact-forms.index');
+    Route::get('/contact-forms/{id}', [ContactFormController::class, 'show'])->name('admin.contact-forms.show');
+    Route::delete('/contact-forms/{id}', [ContactFormController::class, 'destroy'])->name('admin.contact-forms.destroy');
 });
 
 require __DIR__ . '/auth.php';
