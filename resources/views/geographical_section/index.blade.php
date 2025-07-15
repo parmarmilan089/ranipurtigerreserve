@@ -33,7 +33,7 @@
                                     <div class="font-semibold mb-1">{{ $section->bullet_title }}</div>
                                 @endif
                                 <ul class="list-disc pl-4">
-                                    @foreach (explode(',', $section->bullet_points ?? '') as $bullet)
+                                    @foreach (($section->bullet_points ?? []) as $bullet)
                                         <li>{{ $bullet }}</li>
                                     @endforeach
                                 </ul>
