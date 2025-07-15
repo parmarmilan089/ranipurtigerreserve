@@ -49,6 +49,6 @@ class ContactFormController extends Controller
         {
             $contact = ContactForm::findOrFail($id);
         $contact->delete();
-        return redirect()->route('admin.contact-forms.index')->with('success', 'Contact form deleted successfully.');
+        return redirect()->route('contact-forms.index')->with('success', 'Contact form deleted successfully.');
     }
 }
