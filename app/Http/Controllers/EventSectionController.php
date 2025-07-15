@@ -23,7 +23,7 @@ class EventSectionController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'string',
+            'description' => 'nullable|string',
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
             'bullet_points' => 'nullable|array',
             'bullet_points.*' => 'nullable|string',
@@ -48,15 +48,14 @@ class EventSectionController extends Controller
 
     public function update(Request $request, $id)
     {
+        $event = EventSection::findOrFail($id);
         $data = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'string',
-            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            'description' => 'nullable|string',
+            'image' => ($event->image ? 'nullable' : 'required') . '|image|mimes:jpg,jpeg,png|max:2048',
             'bullet_points' => 'nullable|array',
             'bullet_points.*' => 'nullable|string',
         ]);
-
-        $event = EventSection::findOrFail($id);
 
         if ($request->hasFile('image')) {
             if ($event->image) {
