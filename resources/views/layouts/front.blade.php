@@ -67,7 +67,7 @@
                             <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link request-btn" href="#">Book Here</a>
+                            <a class="nav-link request-btn disabled" href="#" tabindex="-1" aria-disabled="true" style="pointer-events: none; opacity: 0.6;">Book Here</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
