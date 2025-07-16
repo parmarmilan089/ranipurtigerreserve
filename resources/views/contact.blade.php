@@ -8,7 +8,7 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
 
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index-2.html"><img src="{{ asset('assets/images/backgrond-main.jpg') }}" alt=""
+                <div class="nav-logo"><a href="index-2.html"><img src="assets/images/team/backgrond-main.jpg" alt=""
                             title=""></a>
                 </div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
