@@ -1,4 +1,4 @@
-<div class="flex flex-col w-64 h-screen bg-white border-r border-gray-200 fixed">
+<div class="lg:fixed lg:flex flex-col w-64 h-screen bg-white border-r border-gray-200 hidden lg:block z-30">
     <div class="flex items-center justify-center h-16 border-b">
         <a href="{{ route('dashboard') }}">
             <x-dashboard-logo class="block h-9 w-auto fill-current text-gray-800" />
@@ -69,4 +69,12 @@
             </ul>
         </div>
     </div>
+</div>
+<!-- Mobile menu button (optional, for future mobile drawer) -->
+<div class="lg:hidden flex items-center h-16 px-4 bg-white border-b border-gray-200">
+    <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+        <!-- Hamburger icon -->
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+    <span class="ml-2 font-semibold">Menu</span>
 </div>

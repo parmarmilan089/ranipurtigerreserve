@@ -31,7 +31,7 @@
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100 flex">
         @include('layouts.sidebar')
-        <div class="flex-1 ml-64">
+        <div class="flex-1 lg:ml-64">
             <!-- Page Heading -->
             @isset($header)
                 <header class="bg-white shadow">
