@@ -332,7 +332,7 @@
             </div>
         </div>
         <div class="footer-bottom centred">
-            <div class="auto-container">
+            <div class="auto-container p-0">
                 <div class="copyright">
                     <p>&copy; 2025. All rights reserved by <a href="#">Ranipur Tiger Reserve</a></p>
                 </div>

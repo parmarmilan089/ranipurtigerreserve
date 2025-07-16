@@ -52,16 +52,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav ml-auto">
                         <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
-                          <a class="nav-link" href="#about">About</a>
+                          <a class="nav-link" href="{{ route('home') }}#about">About</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">Hotels & Resorts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#attractions">Attractions</a>
+                            <a class="nav-link" href="{{ route('home') }}#attractions">Attractions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#reach">How to Reach</a>
+                            <a class="nav-link" href="{{ route('home') }}#reach">How to Reach</a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('contact') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('contact') }}">Contact</a>
