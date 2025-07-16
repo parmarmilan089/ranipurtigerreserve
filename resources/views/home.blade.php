@@ -20,7 +20,7 @@
 
                                 <div class="col-md-6">
                                     <figure>
-                                        <img src="{{ asset('assets/images/banner-1.png')}}" alt="" />
+                                        {{--  <img src="{{ asset('assets/images/banner-1.png')}}" alt="" />  --}}
                                     </figure>
                                 </div>
                             </div>
