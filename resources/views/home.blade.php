@@ -5,7 +5,7 @@
         <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
             @foreach ($banners as $banner)
                 <div class="slide-item">
-                    <div class="image-layer" style="background-image:url({{ asset('assets/images/backgrond-main.jpg') }})">
+                    <div class="image-layer" style="background-image:url({{ asset('storage/' . $banner->banner_image) }})">
                     </div>
                     <div class="auto-container">
                         <div class="content-box">
