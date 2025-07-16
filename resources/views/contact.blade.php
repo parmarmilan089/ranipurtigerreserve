@@ -44,10 +44,10 @@
                 <div class="content-box">
                     <ul class="bread-crumb clearfix">
                         <li><a href="index.html" style="color:#bfbfbf ">Home</a></li>
-                        <li>Contact</li>
+                        <li style="color:#bfbfbf ">Contact</li>
                     </ul>
                     <div class="title">
-                        <h1 style="color:#bfbfbf ">Contact</h1>
+                        <h1 >Contact</h1>
                     </div>
                 </div>
             </div>
