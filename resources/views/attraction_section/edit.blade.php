@@ -6,7 +6,8 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto bg-white px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6">
+        <div class="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6">
+            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
             <form method="POST" action="{{ route('attraction-section.update', $attraction->id) }}" enctype="multipart/form-data" class="space-y-6">
                 @csrf
                 @method('PUT')
@@ -42,6 +43,7 @@
 
                 <x-primary-button>{{ __('Update Attraction Section') }}</x-primary-button>
             </form>
+        </div>
         </div>
     </div>
 
